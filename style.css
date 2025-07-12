@@ -1,0 +1,345 @@
+/* Глобальные настройки и переменные */
+
+@font-face {
+  font-family: "TT Commons";
+  src: url("./TTCommons-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Шрифт для заголовков: MONTSERRAT --- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/Montserrat-Regular.ttf") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Цвета */
+  --color-primary-red: #f51b1b;
+  --color-black: #000000;
+  /* --color-bg-page: rgba(255, 255, 255, 1); */
+  --color-white: #ffffff;
+
+  /* Типографика */
+  --font-family-base: "TT Commons", sans-serif;
+  --font-family-tittle: "Montserrat", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: var(--font-family-tittle);
+}
+
+/* Базовые стили и обертки */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -1%;
+}
+
+.page-container {
+  max-width: 1440px;
+  min-height: 780px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--color-black);
+}
+
+.resume-card {
+  display: grid;
+  grid-template-columns: 322px auto;
+  gap: 31px;
+}
+
+.sidebar__info-conatiner {
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 40px 24px;
+  background-color: var(--color-primary-red);
+  margin-top: -45px;
+}
+
+.sidebar__info-conatiner::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 16px;
+  background-image: url(./img/Union.png);
+}
+
+.sidebar__name {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--color-white);
+}
+
+.sidebar__meta {
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.contacts-list {
+  list-style-type: none;
+  padding-bottom: 44px;
+}
+
+.contacts-list > .contacts-list__item {
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+.contacts-list__item > a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.contacts-list__item:last-child {
+  margin-bottom: 0;
+}
+
+/* ----------------------------------- */
+
+.content-section__main > .main-text {
+  max-width: 690px;
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -1%;
+  margin-bottom: 32px;
+}
+
+.main-content__logo > img {
+  display: block;
+  margin-left: auto;
+  margin-top: -12px;
+  margin-bottom: 8px;
+}
+
+.main-content__logo:hover {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.mobile-logo {
+  display: none;
+  margin-bottom: 48px;
+}
+
+.definition-border {
+  border: 1px solid #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 586px; */
+  padding: 48px 50px 40px 28px;
+}
+
+.definition-border::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 57px;
+  width: 60px;
+  height: 20px;
+  /* transform: rotate(180deg); */
+  /* overflow: hidden; */
+  background-image: url(./img/arrow.png);
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: 124px auto;
+  gap: 72px;
+  margin-bottom: 24px;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
+}
+.content-section p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.section-divider:nth-child(n + 2) {
+  border: none;
+  height: 1px;
+  background-color: var(--color-white);
+  margin: 0 0 24px 0;
+  opacity: 0.4;
+}
+
+.section-divider:nth-child(1) {
+  border: none;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-white);
+  font-family: var(--font-family-tittle);
+}
+
+.definition-list {
+  letter-spacing: -1%;
+}
+
+.definition-list dt {
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.definition-list dd {
+  font-size: 14px;
+  color: var(--color-white);
+  margin-left: 0;
+  margin-bottom: 16px;
+  opacity: 0.4;
+}
+.definition-list dd:last-child {
+  margin-bottom: 0;
+}
+
+.skills-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.skill-tag {
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Адаптивность */
+
+@media (max-width: 1190px) {
+  .contacts-list {
+    padding-bottom: 91px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-logo {
+    display: block;
+  }
+
+  .mobile-logo > img {
+    width: 220px;
+  }
+  .main-content__logo {
+    display: none;
+  }
+  .sidebar__photo {
+    width: 100%;
+  }
+
+  .resume-card {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 20px;
+  }
+
+  .content-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .definition-border {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .page-container {
+    padding: 20px 15px 58px 15px;
+  }
+
+  .definition-border {
+    padding: 30px 15px;
+  }
+
+  .definition-border::after {
+    left: calc(50% - 30px);
+  }
+
+  .sidebar__info-conatiner {
+    padding: 30px 20px;
+  }
+
+  .sidebar__meta {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  .content-section__main > .main-text {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+
+  .contacts-list__item > a {
+    font-size: 16px;
+  }
+
+  .contacts-list > .contacts-list__item {
+    margin-bottom: 18px;
+  }
+
+  .skills-list {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .contacts-list {
+    padding-bottom: 20px;
+  }
+}
