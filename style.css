@@ -334,6 +334,10 @@ body {
     margin-bottom: 18px;
   }
 
+  .contacts-list__item > span {
+    vertical-align: text-bottom;
+  }
+
   .skills-list {
     gap: 12px;
     margin-bottom: 0;
